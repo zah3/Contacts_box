@@ -1,0 +1,17 @@
+{% extends "::base.html.twig" %}
+
+{% block title %} All of Email{% endblock %}
+
+{% block body %}
+
+    <h2>All Email of User: </h2>
+
+    {% for email in emails %}
+        <h1>Email: </h1>
+        <p> Address: {{email.address}} </p>
+        <p> Type:  {{email.type}} </p>
+        <p><a href="{{ path('contacts_email_modify', {'id': email.id})}}">Edition</a> Or   <a href ="{{ path('contacts_email_deleteaddress', {'id': email.id})}}"> Delete this Email </a></p>
+    {% else %}
+        <p> No Email found</p>
+    {% endfor %}
+{% endblock %}

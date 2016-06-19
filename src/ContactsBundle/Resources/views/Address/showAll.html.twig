@@ -1,0 +1,19 @@
+{% extends "::base.html.twig" %}
+
+{% block title %} All of Address{% endblock %}
+
+{% block body %}
+
+<h2>All Addresses of User: </h2>
+
+    {% for address in addresses %}
+        <h2>Address:</h2>
+    <p> City {{address.city}} </p>
+    <p> Street {{address.steet}} </p>
+    <p>House Number {{address.houseNumber}}</p>
+    <p>Flat number {{address.floatNumber}}</p>
+        <p><a href="{{ path('contacts_address_modify', {'id': address.id})}}">Edition</a> Or   <a href ="{{ path('contacts_address_deleteaddress', {'id': address.id})}}"> Delete this Address </a></p>
+        {% else %}
+        <p> No Address found</p>
+        {% endfor %}
+{% endblock %}

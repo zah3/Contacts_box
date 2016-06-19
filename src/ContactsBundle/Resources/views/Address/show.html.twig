@@ -1,0 +1,11 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Address show{% endblock %}
+
+{% block body %}
+    <h1>Address: </h1>
+    <p> City {{address.city}} </p>
+    <p> Street {{address.steet}} </p>
+    <p>House Number {{address.houseNumber}}</p>
+    <p>Flat number {{address.floatNumber}}</p>
+{% endblock %}

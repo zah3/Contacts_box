@@ -1,0 +1,18 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}ContactsBundle:Contact:showAll{% endblock %}
+
+{% block body %}
+    <h1>Welcome to the Contact:show page</h1>
+    <h3><a href="{{ path('contacts_contact_new') }}">Add new Contact</a> </h3>
+        {% for contact in contacts %}
+
+            <p>Name: <a href="{{ path('contacts_contact_show', {'id': contact.id})}}">  {{contact.name}}</a></p>
+            <p>Surname: {{contact.surname}}</p>
+            <p>Description: {{contact.description}}</p>
+            <p><a href ="{{ path('contacts_contact_modify', {'id': contact.id})}}"> Edit this Contact </a>  Or   <a href ="{{ path('contacts_contact_delete', {'id': contact.id})}}"> Delete this Contact </a></p>
+            <br/>
+        {% else %}
+            <p> No contact found</p>
+        {% endfor %}
+{% endblock %}

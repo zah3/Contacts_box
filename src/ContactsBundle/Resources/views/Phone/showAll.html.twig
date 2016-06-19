@@ -1,0 +1,17 @@
+{% extends "::base.html.twig" %}
+
+{% block title %} All of phones{% endblock %}
+
+{% block body %}
+
+    <h2>All phone of User: </h2>
+
+    {% for phone in phones %}
+        <h1>Phone :</h1>
+        <p> Number: {{phone.number}} </p>
+        <p> Type:  {{phone.type}} </p>
+        <p><a href="{{ path('contacts_phone_modify', {'id': phone.id})}}">Edition</a> Or   <a href ="{{ path('contacts_phone_deleteaddress', {'id': phone.id})}}"> Delete this Phone </a></p>
+    {% else %}
+        <p> No Phone found</p>
+    {% endfor %}
+{% endblock %}
